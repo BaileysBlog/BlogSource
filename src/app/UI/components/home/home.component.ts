@@ -8,7 +8,20 @@ import { UIService } from '../../../_Services/ui.service';
 })
 export class HomeComponent implements OnInit {
 
-  constructor(public UI: UIService) { }
+  Blogs: Array<any> = new Array<any>();
+
+  constructor(public UI: UIService)
+  {
+    for (let index = 0; index < this.getRandomArbitrary(50, 100); index++) 
+    {
+      this.Blogs.push({});
+    }
+  }
+
+  getRandomArbitrary(min: number, max: number): number
+  {
+    return Math.random() * (max - min) + min;
+  }
 
   ngOnInit() {
   }

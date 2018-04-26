@@ -1,6 +1,7 @@
 import { Injectable, ElementRef, ViewChild, HostListener } from "@angular/core";
-import { MatSidenav } from "@angular/material";
+import { MatSidenav, MatIconRegistry } from "@angular/material";
 import { Router, NavigationEnd } from "@angular/router";
+import { DomSanitizer } from "@angular/platform-browser";
 
 
 
@@ -15,7 +16,7 @@ export class UIService
 
     IncludeSideNav: boolean = true;
 
-    constructor(private Nav:Router)
+    constructor(private Nav: Router, private iconRegistry: MatIconRegistry, private sanitizer: DomSanitizer)
     {
         Nav.events.subscribe(event =>
         {
@@ -25,6 +26,19 @@ export class UIService
                 window.dispatchEvent(new Event("resize"));
             }    
         });
+
+        this.ConfigureIcons();
+    }
+
+    private ConfigureIcons(): void
+    { 
+        this.iconRegistry.addSvgIcon(
+            'google-share',
+            this.sanitizer.bypassSecurityTrustResourceUrl('../assets/icons/svg/share.svg'));
+        
+        this.iconRegistry.addSvgIcon(
+            'google-share-outline',
+            this.sanitizer.bypassSecurityTrustResourceUrl('../assets/icons/svg/share-outline.svg'));
     }
 
     public GetIncludeSideNav(): boolean

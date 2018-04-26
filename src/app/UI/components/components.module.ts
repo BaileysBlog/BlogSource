@@ -8,11 +8,12 @@ import { MaterialModule } from '../../Material Design/material.module';
 import { FullHeightDirective } from './full-height.directive';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { ReactiveFormsModule } from '@angular/forms';
+import { BlogPreviewComponent } from './blog-preview/blog-preview.component';
 
 
 @NgModule({
-  declarations: [LoginComponent, HomeComponent, FullHeightDirective],
+  declarations: [LoginComponent, BlogPreviewComponent, HomeComponent, FullHeightDirective],
   imports: [NgbModule, ReactiveFormsModule, MaterialModule, CommonModule],
-  exports:[FullHeightDirective]
+  exports:[FullHeightDirective, MaterialModule]
 })
 export class ComponentsModule { }
