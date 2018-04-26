@@ -28,7 +28,7 @@ export class HomeComponent implements OnInit {
         if (_blog.Id == blog.Id)
         { 
           _blog.UpdateShares();
-          this.toast.openSnackBar("Thanks for sharing!", "Dismiss", 5);
+          this.toast.openSnackBar("Thanks for sharing!", "Dismiss", 3);
         }  
       });
 
