@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { UIService } from '../../../_Services/ui.service';
+import { Blog } from '../../../_Models/blog.model';
 
 @Component({
   selector: 'app-home',
@@ -8,19 +9,33 @@ import { UIService } from '../../../_Services/ui.service';
 })
 export class HomeComponent implements OnInit {
 
-  Blogs: Array<any> = new Array<any>();
+  Blogs: Array<Blog> = new Array<Blog>();
 
   constructor(public UI: UIService)
   {
     for (let index = 0; index < this.getRandomArbitrary(50, 100); index++) 
     {
-      this.Blogs.push({});
+      this.Blogs.push(new Blog(index,`Blog ${index+1}`, "Bailey Miller", "", this.getRandomArbitrary(0, 10), this.getRandomArbitrary(0, 10), false));
     }
+
+    document.addEventListener("blogShared", (e: CustomEvent) =>
+    {
+      var blog = e.detail as Blog;
+
+      this.Blogs.map((_blog) =>
+      {
+        if (_blog.Id == blog.Id)
+        { 
+          _blog.UpdateShares();
+        }  
+      });
+
+    });
   }
 
   getRandomArbitrary(min: number, max: number): number
   {
-    return Math.random() * (max - min) + min;
+    return  Math.round(Math.random() * (max - min) + min);
   }
 
   ngOnInit() {

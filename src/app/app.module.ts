@@ -20,6 +20,7 @@ import { NavBarComponent } from './nav-bar/nav-bar.component';
 import { ComponentsModule } from './UI/components/components.module';
 import { UIService } from './_Services/ui.service';
 import { AuthService } from './_Services/auth.service';
+import { Blog } from './_Models/blog.model';
 
 
 @NgModule({
@@ -45,6 +46,10 @@ export class AppModule
 {
   constructor(checker: CheckForUpdateService, logger: LogUpdateService, prompter: PromptUpdateService)
   { 
-    
+    var blogShareEvent = document.createEvent("Event");
+    blogShareEvent.initEvent("blogShare", true, true);
+
+    var blogSharedEvent = document.createEvent("Event");
+    blogSharedEvent.initEvent("blogShared", true, true);
   }
 }

@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { Blog } from '../../../_Models/blog.model';
 
 @Component({
   selector: 'blog-preview',
@@ -7,7 +8,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class BlogPreviewComponent implements OnInit {
 
-  constructor() { }
+  @Input()
+  public Blog: Blog;
+
+  constructor()
+  {
+    
+  }
 
   ngOnInit() {
   }

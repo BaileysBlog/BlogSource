@@ -2,6 +2,8 @@ import { Injectable, ElementRef, ViewChild, HostListener } from "@angular/core";
 import { MatSidenav, MatIconRegistry } from "@angular/material";
 import { Router, NavigationEnd } from "@angular/router";
 import { DomSanitizer } from "@angular/platform-browser";
+import { Blog } from "../_Models/blog.model";
+import { AppComponent } from "../app.component";
 
 
 
@@ -26,7 +28,6 @@ export class UIService
                 window.dispatchEvent(new Event("resize"));
             }    
         });
-
         this.ConfigureIcons();
     }
 

@@ -9,11 +9,13 @@ import { FullHeightDirective } from './full-height.directive';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { ReactiveFormsModule } from '@angular/forms';
 import { BlogPreviewComponent } from './blog-preview/blog-preview.component';
+import { ShareScreenComponent } from './share-screen/share-screen.component';
 
 
 @NgModule({
-  declarations: [LoginComponent, BlogPreviewComponent, HomeComponent, FullHeightDirective],
+  declarations: [LoginComponent, BlogPreviewComponent, HomeComponent, FullHeightDirective, ShareScreenComponent],
   imports: [NgbModule, ReactiveFormsModule, MaterialModule, CommonModule],
-  exports:[FullHeightDirective, MaterialModule]
+  exports: [FullHeightDirective, MaterialModule, ShareScreenComponent],
+  entryComponents:[ShareScreenComponent]
 })
 export class ComponentsModule { }
