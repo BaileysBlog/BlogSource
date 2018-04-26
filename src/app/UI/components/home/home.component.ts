@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { UIService } from '../../../_Services/ui.service';
 import { Blog } from '../../../_Models/blog.model';
+import { SnackBarService } from '../../../_Services/snack-bar.service';
 
 @Component({
   selector: 'app-home',
@@ -11,7 +12,7 @@ export class HomeComponent implements OnInit {
 
   Blogs: Array<Blog> = new Array<Blog>();
 
-  constructor(public UI: UIService)
+  constructor(public UI: UIService, private toast: SnackBarService)
   {
     for (let index = 0; index < this.getRandomArbitrary(50, 100); index++) 
     {
@@ -27,6 +28,7 @@ export class HomeComponent implements OnInit {
         if (_blog.Id == blog.Id)
         { 
           _blog.UpdateShares();
+          this.toast.openSnackBar("Thanks for sharing!", "Dismiss", 5);
         }  
       });
 

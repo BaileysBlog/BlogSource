@@ -10,7 +10,7 @@
   <mat-card-actions>
     <div>
       <button mat-icon-button (click)="Blog.ToggleLike()" color="warn">
-        <mat-icon aria-label="Like Icon">{{Blog.IsLiked ? 'favorite' : 'favorite_border'}}</mat-icon>
+        <mat-icon aria-label="Like Icon">{{Blog.GetLikeStatus() ? 'favorite' : 'favorite_border'}}</mat-icon>
       </button>
       <b class="mat-warn">{{Blog.Likes}}</b>
       <span class="mat-warn"> Likes</span>
