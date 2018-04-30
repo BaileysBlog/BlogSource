@@ -10,3 +10,17 @@ mat-card-actions
 {
   width:inherit !important;
 }
+
+img
+{
+  height:280px;
+  width:350px;
+  margin-bottom:0px;
+}
+
+.loading {
+  content: ' ';
+  background: transparent url('../../../../assets/icons/loading_spinner.gif')  center no-repeat ;
+  background-size : auto 100%;
+  display: block;
+}

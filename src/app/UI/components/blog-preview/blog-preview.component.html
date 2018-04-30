@@ -3,7 +3,7 @@
     <mat-card-title>{{Blog.Title}}</mat-card-title>
     <mat-card-subtitle>Written by: {{Blog.Author}}</mat-card-subtitle>
   </mat-card-header>
-  <img mat-card-image class="Clickable" src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu">
+  <img mat-card-image class="Clickable" [ngClass]="{'loading': DisplayLoading}" src="{{Blog.ImageUrl}}" alt="" (load)="LoadEvent($event)">
   <mat-card-content>
 
   </mat-card-content>

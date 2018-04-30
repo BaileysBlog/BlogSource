@@ -10,13 +10,21 @@ export class BlogPreviewComponent implements OnInit {
 
   @Input()
   public Blog: Blog;
+  public DisplayLoading: boolean = true;
 
   constructor()
   {
     
   }
 
-  ngOnInit() {
+  LoadEvent(data: any)
+  { 
+    this.DisplayLoading = false;
+  }
+
+  ngOnInit() 
+  {
+    
   }
 
 }
