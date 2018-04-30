@@ -16,7 +16,7 @@ export class HomeComponent implements OnInit {
   {
     for (let index = 0; index < this.getRandomArbitrary(50, 100); index++) 
     {
-      this.Blogs.push(new Blog(index, `Blog ${index + 1}`, "Bailey Miller", (index % 2 == 0 ? "http://placehold.it/not-existing" : "https://placehold.it/750x600?text=" + index), this.getRandomArbitrary(0, 10), this.getRandomArbitrary(0, 10), false));
+      this.Blogs.push(new Blog(index, `Blog ${index + 1}`, "Bailey Miller", (index % 2 == 0 ? "" : "https://placehold.it/750x600?text=" + index), this.getRandomArbitrary(0, 10), this.getRandomArbitrary(0, 10), false));
     }
 
     document.addEventListener("blogShared", (e: CustomEvent) =>
