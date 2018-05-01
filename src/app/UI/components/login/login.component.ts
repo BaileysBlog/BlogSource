@@ -14,10 +14,14 @@ export class LoginComponent implements OnInit, OnDestroy {
   public LoginForm: FormGroup;
   public Loading: boolean;
 
+  
+
   constructor(private UI:UIService, private toast: SnackBarService, private auth: AuthService) 
   {
-
+    
   }
+
+  
 
   private ResetForm(): void
   {
@@ -46,6 +50,7 @@ export class LoginComponent implements OnInit, OnDestroy {
       
       this.toast.openSnackBar("Login Successful", null, 5);
       this.auth.Login(null, null);
+
     }, 5000);
 
   }

@@ -21,13 +21,13 @@ import { ComponentsModule } from './UI/components/components.module';
 import { UIService } from './_Services/ui.service';
 import { AuthService } from './_Services/auth.service';
 import { Blog } from './_Models/blog.model';
+import { AuthGuard } from './_Services/Guards/auth.guard';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     NavBarComponent
-    
   ],
   imports: [
     BrowserModule,
@@ -39,7 +39,7 @@ import { Blog } from './_Models/blog.model';
     MaterialModule,
     ComponentsModule
   ],
-  providers: [CheckForUpdateService,LogUpdateService, PromptUpdateService, SnackBarService, UIService,AuthService],
+  providers: [CheckForUpdateService,LogUpdateService, PromptUpdateService, SnackBarService, UIService,AuthService, AuthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule

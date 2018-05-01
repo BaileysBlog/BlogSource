@@ -10,11 +10,12 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { ReactiveFormsModule } from '@angular/forms';
 import { BlogPreviewComponent } from './blog-preview/blog-preview.component';
 import { ShareScreenComponent } from './share-screen/share-screen.component';
+import { RouterModule } from '@angular/router';
 
 
 @NgModule({
   declarations: [LoginComponent, BlogPreviewComponent, HomeComponent, FullHeightDirective, ShareScreenComponent],
-  imports: [NgbModule, ReactiveFormsModule, MaterialModule, CommonModule],
+  imports: [NgbModule, ReactiveFormsModule, MaterialModule, CommonModule,RouterModule],
   exports: [FullHeightDirective, MaterialModule, ShareScreenComponent],
   entryComponents:[ShareScreenComponent]
 })
